@@ -52,7 +52,7 @@ namespace Калькулятор
             {
                 schetchik = 0;
                 bool m = false;
-                Console.Write("Выберите символ(+,-,*,/): ");
+                Console.Write("Выберите символ(+,-,*): ");
             while (!char.TryParse(Console.ReadLine(), out selection) || (selection != '+' && selection != '-' && selection != '*'))
             {
                 Console.Write("\nВыберите символ(+,-,*) корректно: ");
@@ -488,13 +488,13 @@ namespace Калькулятор
                             {
                                 num_char_2[i] = num_char_2[1 + i];
                             }
+                            Array.Resize(ref num_char_2, num_char_2.Length - 1);
                         }
                         for(i = 0; i < num_1.Length; i++)
                         {
                             if (num_1[i] < 0)
                                 num_1[i] = num_1[i] * (-1);
                         }
-                        Array.Resize(ref num_char_2, num_char_2.Length - 1);
                         num_2 = new int[num_char_2.Length];
                         k_k = true;
                         k = true;
